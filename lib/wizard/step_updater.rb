@@ -12,6 +12,10 @@ class Wizard
       send(updater_method, fields.symbolize_keys) if respond_to?(updater_method)
     end
 
+    def update_locale(fields)
+      update_setting(:default_locale, fields, :default_locale)
+    end
+
     def update_forum_title(fields)
       update_setting(:title, fields, :title)
       update_setting(:site_description, fields, :site_description)

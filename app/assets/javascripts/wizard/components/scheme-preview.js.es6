@@ -96,9 +96,9 @@ export default Ember.Component.extend({
     const headerHeight = HEIGHT * 0.15;
 
     const colorScheme = this.get('colorScheme');
-    const options = this.get('step.fieldsById.color_scheme.options');
-    const option = options.findProperty('id', colorScheme);
-    if (!option) { return; }
+    const choices = this.get('step.fieldsById.color_scheme.choices');
+    const option = choices.findProperty('id', colorScheme);
+    if (!choices) { return; }
 
     const colors = option.data.colors;
     if (!colors) { return; }
